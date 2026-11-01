@@ -111,24 +111,31 @@
       <div class="guide-grid">
         <article>
           <span class="guide-num">01</span>
-          <h3>Perusahaan A menulis pesan</h3>
-          <p>Contohnya, pesan <b>TELKOM</b>. Website mengubah tiap huruf menjadi angka: T = 20, E = 5, L = 12, K = 11, O = 15, M = 13.</p>
-          <div class="equation">TELKOM → 20, 5, 12, 11, 15, 13</div>
+          <h3>1. Tulis Pesan (Bisa &gt; 1 Kata)</h3>
+          <p>Pengunjung dapat menuliskan pesan <b>lebih dari 1 kata</b> (misalnya kalimat dengan spasi). Huruf kapital A–Z diubah menjadi 1–26, huruf kecil a–z menjadi −1 sampai −26, dan spasi diubah menjadi 0.</p>
+          <div class="equation">TELKOM INDONESIA → 20, 5, 12, 11, 15, 13, 0, 9, 14, 4, 15, 14, 5, 19, 9, 1</div>
         </article>
 
         <article>
           <span class="guide-num">02</span>
-          <h3>Website mengacak angka dengan rumus</h3>
-          <p>Angka dimasukkan ke fungsi g(x) terlebih dahulu. Hasilnya lalu dimasukkan ke fungsi f(x). Deretan angka akhir disebut <b>hasil enkripsi</b>.</p>
-          <div class="equation">E(x) = f(g(x))</div>
+          <h3>2. Kunci Fungsi Dinamis (Bebas Diubah)</h3>
+          <p>Fungsi f(x) = ax + b dan g(x) = cx + d <b>tidak bersifat tetap</b>! Pengunjung bebas mengubah angka parameter a, b, c, dan d sesuai keinginan (syarat: a ≠ 0 dan c ≠ 0 agar memiliki invers).</p>
+          <div class="equation">E(x) = (f ∘ g)(x) = a(cx + d) + b = acx + (ad + b)</div>
         </article>
 
         <article>
           <span class="guide-num">03</span>
-          <h3>Bank Mitra mengembalikan pesan</h3>
+          <h3>3. Bank Mitra Membuka Pesan</h3>
           <p>Penerima memakai fungsi invers dalam urutan yang benar untuk menemukan angka awal, lalu mengubah angka itu menjadi huruf lagi.</p>
           <div class="equation">(f ∘ g)⁻¹ = g⁻¹ ∘ f⁻¹</div>
         </article>
+      </div>
+
+      <div class="dynamic-notice" style="background:#f0fbf9;border:1px solid #cce8e2;border-radius:12px;padding:14px 18px;margin-top:22px;display:flex;gap:12px;">
+        <span style="font-size:20px;">💡</span>
+        <p style="margin:0;font-size:12.5px;line-height:1.7;color:#24464b;">
+          <b>Informasi Fleksibilitas Pengunjung:</b> Anda bebas mengetikkan pesan sepanjang beberapa kata (dilengkapi spasi) dan bebas bereksplorasi mengganti nilai koefisien fungsi f(x) dan g(x) pada ruang pengiriman. Rumus komposisi dan langkah pembalik akan dihitung ulang secara dinamis dan instan!
+        </p>
       </div>
 
       <div class="notice concept-notice">

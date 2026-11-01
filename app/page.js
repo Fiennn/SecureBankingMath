@@ -66,7 +66,16 @@ function codeToChar(num, originalChar) {
 }
 
 export default function HomePage() {
-  const { user, logout } = useAuth();
+  const { user, login, logout } = useAuth();
+
+  const handleQuickGuest = () => {
+    login({
+      name: 'Tamu / Guest',
+      email: 'tamu@browser.local',
+      color: '#6c8190',
+      isGuest: true
+    });
+  };
 
   // State Enkripsi
   const [message, setMessage] = useState('TELKOM');
@@ -225,8 +234,12 @@ export default function HomePage() {
 
         <nav aria-label="Navigasi Utama">
           <a href="#alur">Cara Kerja</a>
-          <a href="#transmit">Enkripsi Pesan</a>
-          <a href="#calculator">Kalkulator</a>
+          <a href="#transmit">
+            Enkripsi Pesan {!user && <span className="lock-badge" title="Terkunci - Butuh Login">🔒</span>}
+          </a>
+          <a href="#calculator">
+            Kalkulator {!user && <span className="lock-badge" title="Terkunci - Butuh Login">🔒</span>}
+          </a>
           <a href="#guide">Materi</a>
         </nav>
 
@@ -338,30 +351,43 @@ export default function HomePage() {
           <div className="eyebrow">SEBELUM MULAI</div>
           <h2>Bagaimana ceritanya?</h2>
           <p className="intro-copy">
-            Anggap saja Perusahaan A ingin mengirim pesan kepada Bank Mitra. Keduanya mengikuti aturan hitung yang sama. Website ini memperagakan cara pesan diubah menjadi angka, diproses secara matematis, lalu dikembalikan secara langsung di memori browser tanpa database.
+            Anggap saja Perusahaan A ingin mengirim pesan kepada Bank Mitra. Keduanya mengikuti aturan hitung matematika yang disepakati. Website ini memperagakan cara pesan diubah menjadi representasi angka, diproses dengan fungsi komposisi, lalu dikembalikan secara presisi memakai invers tanpa database.
           </p>
 
           <div className="guide-grid">
             <article>
               <span className="guide-num">01</span>
-              <h3>Perusahaan A menulis pesan</h3>
-              <p>Contohnya, pesan <b>TELKOM</b>. Website mengubah tiap huruf menjadi angka: T = 20, E = 5, L = 12, K = 11, O = 15, M = 13.</p>
-              <div className="equation">TELKOM → 20, 5, 12, 11, 15, 13</div>
+              <h3>1. Tulis Pesan (Bisa &gt; 1 Kata)</h3>
+              <p>
+                Pengunjung dapat menuliskan pesan <b>lebih dari 1 kata</b> (misalnya berupa kalimat lengkap dengan spasi). Huruf kapital A–Z diubah menjadi 1–26, huruf kecil a–z menjadi −1 sampai −26, dan spasi bernilai 0.
+              </p>
+              <div className="equation">TELKOM INDONESIA → 20, 5, 12, 11, 15, 13, 0, 9, 14, 4, 15, 14, 5, 19, 9, 1</div>
             </article>
 
             <article>
               <span className="guide-num">02</span>
-              <h3>Website mengacak angka dengan rumus</h3>
-              <p>Angka dimasukkan ke fungsi g(x) terlebih dahulu. Hasilnya lalu dimasukkan ke fungsi f(x). Deretan angka akhir disebut <b>hasil enkripsi</b>.</p>
-              <div className="equation">E(x) = f(g(x))</div>
+              <h3>2. Kunci Fungsi Dinamis (Bebas Diubah)</h3>
+              <p>
+                Fungsi linear f(x) = ax + b dan g(x) = cx + d <b>tidak bersifat tetap</b>! Pengunjung bebas mengubah angka parameter a, b, c, dan d sesuai keinginan (syarat: a ≠ 0 dan c ≠ 0 agar memiliki invers).
+              </p>
+              <div className="equation">E(x) = (f ∘ g)(x) = a(cx + d) + b = acx + (ad + b)</div>
             </article>
 
             <article>
               <span className="guide-num">03</span>
-              <h3>Bank Mitra mengembalikan pesan</h3>
-              <p>Penerima memakai fungsi invers dalam urutan yang benar untuk menemukan angka awal, lalu mengubah angka itu menjadi huruf lagi.</p>
-              <div className="equation">(f ∘ g)⁻¹ = g⁻¹ ∘ f⁻¹</div>
+              <h3>3. Bank Mitra Membuka Pesan</h3>
+              <p>
+                Penerima memakai rumus invers dengan urutan terbalik: (f ∘ g)⁻¹ = g⁻¹ ∘ f⁻¹. Angka ciphertext dihitung kembali ke angka awal, lalu diterjemahkan kembali menjadi teks asli secara utuh.
+              </p>
+              <div className="equation">(f ∘ g)⁻¹(x) = g⁻¹(f⁻¹(x))</div>
             </article>
+          </div>
+
+          <div className="dynamic-notice">
+            <span>💡</span>
+            <p>
+              <b>Informasi Fleksibilitas Pengunjung:</b> Anda bebas mengetikkan pesan sepanjang beberapa kata (dilengkapi spasi) dan bebas bereksplorasi mengganti nilai koefisien fungsi f(x) dan g(x) pada ruang pengiriman. Rumus komposisi dan langkah pembalik akan dihitung ulang secara dinamis dan instan!
+            </p>
           </div>
 
           <div className="notice concept-notice">
@@ -383,26 +409,52 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="twocol">
-            {/* INPUT PANEL */}
-            <article className="panel">
-              <div className="panel-heading">
-                <span className="step">01</span>
-                <div>
-                  <h3>Pesan dan kunci fungsi</h3>
-                  <p>Kunci adalah angka a, b, c, dan d yang menentukan perhitungan.</p>
+          {!user ? (
+            <div className="feature-lock-overlay">
+              <div className="lock-card">
+                <div className="lock-icon-bubble">🔒</div>
+                <h3>Ruang Enkripsi Pesan Dibatasi</h3>
+                <p>
+                  Untuk dapat memasukkan pesan rahasia, mengubah huruf ke angka, dan melihat proses dekripsi matematika secara langsung, silakan masuk ke akun demo atau masuk sebagai tamu terlebih dahulu.
+                </p>
+                <div className="lock-actions">
+                  <Link href="/login" className="primary">
+                    Masuk ke Akun <b>→</b>
+                  </Link>
+                  <button type="button" onClick={handleQuickGuest} className="quick-guest-btn">
+                    ⚡ Masuk Cepat sebagai Tamu (Guest)
+                  </button>
                 </div>
+                <span className="lock-note">
+                  * Pengunjung tanpa login hanya dapat membaca materi dan alur cara kerja.
+                </span>
               </div>
+            </div>
+          ) : (
+            <>
+              <div className="user-status-pill">
+                <i></i> SESI AKTIF: {user.name} ({user.isGuest ? 'Mode Tamu' : 'Akun Demo'})
+              </div>
+              <div className="twocol">
+                {/* INPUT PANEL */}
+                <article className="panel">
+                  <div className="panel-heading">
+                    <span className="step">01</span>
+                    <div>
+                      <h3>Pesan dan kunci fungsi</h3>
+                      <p>Kunci adalah angka a, b, c, dan d yang menentukan perhitungan.</p>
+                    </div>
+                  </div>
 
-              <label className="field-label">
-                PESAN ASLI
-                <input
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  maxLength={120}
-                  placeholder="Contoh: TELKOM"
-                />
-              </label>
+                  <label className="field-label">
+                    PESAN ASLI (BISA &gt; 1 KATA)
+                    <input
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      maxLength={120}
+                      placeholder="Contoh: TELKOM INDONESIA (bisa > 1 kata)"
+                    />
+                  </label>
 
               {/* FUNGSI F */}
               <div className="keybox">
@@ -534,7 +586,9 @@ export default function HomePage() {
               )}
             </article>
           </div>
-        </section>
+        </>
+      )}
+    </section>
 
         {/* SEKSI KALKULATOR */}
         <section id="calculator" className="section">
@@ -549,7 +603,29 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="twocol">
+          {!user ? (
+            <div className="feature-lock-overlay">
+              <div className="lock-card">
+                <div className="lock-icon-bubble">🔒</div>
+                <h3>Kalkulator Fungsi Interaktif Dibatasi</h3>
+                <p>
+                  Gunakan akun demo (Raka, Nadia, Bagas) atau masuk mode tamu untuk membuka kalkulator fungsi komposisi, invers, dan penjabaran aljabar langkah demi langkah.
+                </p>
+                <div className="lock-actions">
+                  <Link href="/login" className="primary">
+                    Masuk ke Akun <b>→</b>
+                  </Link>
+                  <button type="button" onClick={handleQuickGuest} className="quick-guest-btn">
+                    ⚡ Masuk Cepat sebagai Tamu (Guest)
+                  </button>
+                </div>
+                <span className="lock-note">
+                  * Akses publik tanpa login dibatasi hanya untuk membaca pengantar alur cara kerja dan materi matematika.
+                </span>
+              </div>
+            </div>
+          ) : (
+            <div className="twocol">
             {/* INPUT KALKULATOR */}
             <article className="panel">
               <div className="panel-heading">
@@ -677,7 +753,8 @@ export default function HomePage() {
               </div>
             </article>
           </div>
-        </section>
+        )}
+      </section>
 
         {/* MATERI RINGKAS */}
         <section id="guide" className="section protocol">
