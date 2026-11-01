@@ -609,7 +609,7 @@ export default function HomePage() {
                 <div className="lock-icon-bubble">🔒</div>
                 <h3>Kalkulator Fungsi Interaktif Dibatasi</h3>
                 <p>
-                  Gunakan akun demo (Raka, Nadia, Bagas) atau masuk mode tamu untuk membuka kalkulator fungsi komposisi, invers, dan penjabaran aljabar langkah demi langkah.
+                  Gunakan akun demo (Alfien, Tatang, Sindi) atau masuk mode tamu untuk membuka kalkulator fungsi komposisi, invers, dan penjabaran aljabar langkah demi langkah.
                 </p>
                 <div className="lock-actions">
                   <Link href="/login" className="primary">

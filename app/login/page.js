@@ -6,9 +6,9 @@ import Link from 'next/link';
 import { useAuth } from '../context/AuthContext';
 
 const DEMO_ACCOUNTS = [
-  { name: 'Raka Pratama', email: 'raka.pratama@gmail.com', color: '#167c80' },
-  { name: 'Nadia Putri', email: 'nadia.putri@bankmitra.id', color: '#7868b5' },
-  { name: 'Bagas Saputra', email: 'bagas.saputra@telkom.id', color: '#c07a2c' }
+  { name: 'Alfien Satria', email: 'alfien.satria@gmail.com', color: '#167c80' },
+  { name: 'Tatang Vin', email: 'tatang.vin@bankmitra.id', color: '#7868b5' },
+  { name: 'Sindi Dwi Kartika', email: 'sindi.dwi@telkom.id', color: '#c07a2c' }
 ];
 
 export default function LoginPage() {
@@ -33,8 +33,8 @@ export default function LoginPage() {
 
   const handleGoogleLogin = () => {
     handleSelectAccount({
-      name: 'Raka Pratama (Google)',
-      email: 'raka.pratama@gmail.com',
+      name: 'Alfien Satria (Google)',
+      email: 'alfien.satria@gmail.com',
       color: '#4285F4'
     });
   };
