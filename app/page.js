@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import Link from 'next/link';
+import { useAuth } from './context/AuthContext';
 
 // Formatter angka desimal
 function formatNumber(num) {
@@ -64,6 +66,8 @@ function codeToChar(num, originalChar) {
 }
 
 export default function HomePage() {
+  const { user, logout } = useAuth();
+
   // State Enkripsi
   const [message, setMessage] = useState('TELKOM');
   const [a, setA] = useState('2');
@@ -226,9 +230,41 @@ export default function HomePage() {
           <a href="#guide">Materi</a>
         </nav>
 
-        <div className="secure" aria-label="Status Sistem">
-          <i></i> NEXT.JS · STANDALONE
-        </div>
+        {user ? (
+          <div className="user-nav-chip">
+            <span
+              className="user-nav-avatar"
+              style={{ backgroundColor: user.color || '#167c80' }}
+            >
+              {user.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+            </span>
+            <div className="user-nav-info">
+              <span className="user-nav-name">{user.name}</span>
+              <span className="user-nav-tag">{user.email || 'Online'}</span>
+            </div>
+            <button type="button" onClick={logout} className="user-nav-logout">
+              Keluar
+            </button>
+          </div>
+        ) : (
+          <Link href="/login" className="login-btn-top" aria-label="Masuk ke Akun">
+            <svg
+              viewBox="0 0 24 24"
+              width="14"
+              height="14"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+              <polyline points="10 17 15 12 10 7" />
+              <line x1="15" y1="12" x2="3" y2="12" />
+            </svg>
+            <span>Masuk</span>
+          </Link>
+        )}
       </header>
 
       {/* KONTEN UTAMA */}

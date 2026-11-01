@@ -1,4 +1,5 @@
 import './globals.css';
+import { AuthProvider } from './context/AuthContext';
 
 export const metadata = {
   title: 'SecureBanking Transmit | MathFunction Lab',
@@ -8,7 +9,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="id">
-      <body>{children}</body>
+      <body>
+        <AuthProvider>
+          {children}
+        </AuthProvider>
+      </body>
     </html>
   );
 }
