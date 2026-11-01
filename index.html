@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SecureBanking Transmit | MathFunction Lab</title>
+  <meta name="description" content="Simulasi interaktif protokol enkripsi matematika berbasis fungsi komposisi dan invers tanpa database.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= HEADER & NAVIGASI ================= -->
+  <header class="topbar">
+    <a class="logo" href="index.html" aria-label="SecureBanking Transmit">
+      <span class="logoicon">S</span>
+      <span>
+        SecureBanking <em>Transmit</em>
+        <small>MATHEMATICAL ENCRYPTION PROTOCOL</small>
+      </span>
+    </a>
+
+    <nav aria-label="Navigasi Utama">
+      <a href="#alur">Cara Kerja</a>
+      <a href="#transmit">Enkripsi Pesan</a>
+      <a href="#calculator">Kalkulator</a>
+      <a href="#guide">Materi</a>
+    </nav>
+
+    <div class="secure" aria-label="Status Sistem">
+      <i></i> SIMULATION MODE
+    </div>
+  </header>
+
+  <!-- ================= KONTEN UTAMA ================= -->
+  <main>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">
+          <span></span> SIMULASI PENGIRIMAN PESAN
+        </div>
+        <h1>
+          Kirim pesan rahasia<br>
+          <span>dengan fungsi matematika.</span>
+        </h1>
+        <p>
+          Bayangkan Perusahaan A ingin mengirim pesan ke Bank Mitra. Pesan diubah menjadi angka, diproses dengan fungsi komposisi, lalu dikembalikan menggunakan fungsi invers.
+        </p>
+        <a class="primary" href="#alur">
+          Pelajari cara kerja <b>↗</b>
+        </a>
+        <div class="hero-meta">
+          <span>01 / UBAH KE ANGKA</span>
+          <span>02 / ENKRIPSI</span>
+          <span>03 / BACA KEMBALI</span>
+        </div>
+      </div>
+
+      <!-- VISUAL JALUR PENGIRIMAN -->
+      <div class="network-card">
+        <div class="cardtop">
+          <span>JALUR PENGIRIMAN</span>
+          <span class="live"><i></i> SIMULASI</span>
+        </div>
+        <div class="network">
+          <div class="node">
+            <span class="nodeicon">A</span>
+            <b>Perusahaan A</b>
+            <small>PENGIRIM</small>
+          </div>
+          <div class="route">
+            <span class="route-label">ANGKA ENKRIPSI</span>
+            <div class="route-line"><i></i><i></i><i></i></div>
+            <span class="lock">⌑</span>
+          </div>
+          <div class="node">
+            <span class="nodeicon bank">B</span>
+            <b>Bank Mitra</b>
+            <small>PENERIMA</small>
+          </div>
+        </div>
+        <div class="network-foot">
+          <span>FUNGSI KOMPOSISI</span>
+          <strong>(f ∘ g)(x)</strong>
+        </div>
+        <div class="network-foot">
+          <span>FUNGSI PEMBALIK / INVERS</span>
+          <strong>(f ∘ g)⁻¹(x)</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- TICKER HIGHLIGHT -->
+    <div class="ticker" aria-hidden="true">
+      <span>● SIMULASI MATEMATIKA</span>
+      <span>ENKRIPSI DENGAN FUNGSI</span>
+      <span>TANPA MODULO</span>
+      <span>● BISA DIKEMBALIKAN</span>
+    </div>
+
+    <!-- SEKSI ALUR / CERITA -->
+    <section id="alur" class="section protocol">
+      <div class="eyebrow">SEBELUM MULAI</div>
+      <h2>Bagaimana ceritanya?</h2>
+      <p class="intro-copy">
+        Anggap saja Perusahaan A ingin mengirim pesan kepada Bank Mitra. Keduanya mengikuti aturan hitung yang sama. Website ini memperagakan cara pesan diubah menjadi angka, diproses, lalu dikembalikan secara langsung di browser tanpa perlu database atau koneksi server.
+      </p>
+
+      <div class="guide-grid">
+        <article>
+          <span class="guide-num">01</span>
+          <h3>Perusahaan A menulis pesan</h3>
+          <p>Contohnya, pesan <b>TELKOM</b>. Website mengubah tiap huruf menjadi angka: T = 20, E = 5, L = 12, K = 11, O = 15, M = 13.</p>
+          <div class="equation">TELKOM → 20, 5, 12, 11, 15, 13</div>
+        </article>
+
+        <article>
+          <span class="guide-num">02</span>
+          <h3>Website mengacak angka dengan rumus</h3>
+          <p>Angka dimasukkan ke fungsi g(x) terlebih dahulu. Hasilnya lalu dimasukkan ke fungsi f(x). Deretan angka akhir disebut <b>hasil enkripsi</b>.</p>
+          <div class="equation">E(x) = f(g(x))</div>
+        </article>
+
+        <article>
+          <span class="guide-num">03</span>
+          <h3>Bank Mitra mengembalikan pesan</h3>
+          <p>Penerima memakai fungsi invers dalam urutan yang benar untuk menemukan angka awal, lalu mengubah angka itu menjadi huruf lagi.</p>
+          <div class="equation">(f ∘ g)⁻¹ = g⁻¹ ∘ f⁻¹</div>
+        </article>
+      </div>
+
+      <div class="notice concept-notice">
+        <span>!</span>
+        <p><b>Catatan penting:</b> Ini adalah contoh simulasi pembelajaran matematika sekolah, bukan aplikasi perbankan sungguhan. Tidak ada database dan tidak ada data nyata yang disimpan atau dikirim keluar.</p>
+      </div>
+    </section>
+
+    <!-- SEKSI 01: RUANG PENGIRIMAN & ENKRIPSI -->
+    <section id="transmit" class="section">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">BAGIAN 01 — RUANG PENGIRIMAN</div>
+          <h2>Ubah pesan menjadi angka rahasia</h2>
+          <p>Masukkan pesan dan aturan fungsi. Website akan menunjukkan angka awal, hasil enkripsi, serta langkah cara mengembalikan pesan.</p>
+        </div>
+        <div class="section-index">
+          CONTOH SIMULASI <b>SB-2048</b>
+        </div>
+      </div>
+
+      <div class="twocol">
+        <!-- PANEL FORM INPUT -->
+        <article class="panel">
+          <div class="panel-heading">
+            <span class="step">01</span>
+            <div>
+              <h3>Pesan dan kunci fungsi</h3>
+              <p>Kunci adalah parameter angka a, b, c, dan d yang menentukan perhitungan.</p>
+            </div>
+          </div>
+
+          <label class="field-label">
+            PESAN ASLI
+            <input id="message" value="TELKOM" maxlength="120" placeholder="Contoh: TELKOM">
+          </label>
+
+          <!-- KUNCI FUNGSI F -->
+          <div class="keybox">
+            <div class="keyhead">
+              <span class="keybadge">f</span>
+              <div>
+                <b>Fungsi f(x)</b>
+                <small>f(x) = ax + b</small>
+              </div>
+              <span class="keytag">KEY 01</span>
+            </div>
+            <div class="inputgrid">
+              <label>
+                Angka a
+                <input id="a" type="number" value="2" step="any">
+              </label>
+              <label>
+                Angka b
+                <input id="b" type="number" value="3" step="any">
+              </label>
+            </div>
+          </div>
+
+          <!-- KUNCI FUNGSI G -->
+          <div class="keybox">
+            <div class="keyhead">
+              <span class="keybadge purple">g</span>
+              <div>
+                <b>Fungsi g(x)</b>
+                <small>g(x) = cx + d</small>
+              </div>
+              <span class="keytag">KEY 02</span>
+            </div>
+            <div class="inputgrid">
+              <label>
+                Angka c
+                <input id="c" type="number" value="4" step="any">
+              </label>
+              <label>
+                Angka d
+                <input id="d" type="number" value="1" step="any">
+              </label>
+            </div>
+          </div>
+
+          <div class="notice">
+            <span>i</span>
+            <p>Nilai <b>a</b> dan <b>c</b> harus bukan 0 supaya proses pembalikan (invers) dapat dihitung.</p>
+          </div>
+
+          <button id="encryptBtn" class="primary wide" type="button">
+            Enkripsi pesan dengan (f ∘ g)(x) <b>→</b>
+          </button>
+
+          <div id="cipherError" class="error" hidden></div>
+
+          <div class="converted">
+            <div class="smallcap">PESAN ASLI → ANGKA</div>
+            <div id="convertedNumbers" class="numbers">20, 5, 12, 11, 15, 13</div>
+            <p>Huruf kapital A–Z = 1–26 · Huruf kecil a–z = −1 sampai −26 · Spasi = 0</p>
+          </div>
+        </article>
+
+        <!-- PANEL HASIL ENKRIPSI & DEKRIPSI -->
+        <article class="panel result-panel">
+          <div class="panel-heading">
+            <span class="step">02</span>
+            <div>
+              <h3>Hasil enkripsi</h3>
+              <p>Ini deretan angka ciphertext yang akan dikirim ke Bank Mitra.</p>
+            </div>
+            <span class="encrypted-stamp">ENCRYPTED</span>
+          </div>
+
+          <div class="formula-card">
+            <div class="smallcap">RUMUS FUNGSI KOMPOSISI</div>
+            <strong id="encryptFormula">f(g(x)) = 8x + 5</strong>
+            <div class="formula-rule">Artinya: hitung g(x) lebih dahulu, lalu masukkan hasilnya ke f(x).</div>
+          </div>
+
+          <div class="cipher-output">
+            <div class="smallcap">HASIL ENKRIPSI / DERETAN ANGKA</div>
+            <div id="encrypted" class="numbers big">...</div>
+            <button id="copyBtn" class="copy" type="button">Salin angka</button>
+          </div>
+
+          <div class="decrypt">
+            <div class="decrypt-head">
+              <span class="step light">03</span>
+              <div>
+                <h3>Cara membuka pesan</h3>
+                <p>Bank Mitra memakai fungsi invers untuk mendapatkan kembali angka awal.</p>
+              </div>
+            </div>
+
+            <div class="calcrow">
+              <span>Fungsi invers f⁻¹(x)</span>
+              <b id="finvCipher">(x − 3) / 2</b>
+            </div>
+            <div class="calcrow">
+              <span>Fungsi invers g⁻¹(x)</span>
+              <b id="ginvCipher">(x − 1) / 4</b>
+            </div>
+            <div class="calcrow">
+              <span>Invers dari komposisi</span>
+              <b id="inverseFormula">(f ∘ g)⁻¹(x)</b>
+            </div>
+
+            <div class="steps" id="decryptSteps">
+              Klik tombol enkripsi untuk menampilkan langkah deskripsi.
+            </div>
+
+            <div class="decoded">
+              <span>PESAN SETELAH DIBUKA</span>
+              <strong id="decrypted">TELKOM</strong>
+            </div>
+          </div>
+
+          <div id="successNote" class="success"></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SEKSI 02: KALKULATOR FUNGSI & EKSPLORASI -->
+    <section id="calculator" class="section">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">BAGIAN 02 — KALKULATOR FUNGSI</div>
+          <h2>Pelajari komposisi dan invers</h2>
+          <p>Ubah angka parameter fungsi, tekan tombol hitung, lalu pilih hasil pada kartu untuk mempelajari pembuktian langkahnya.</p>
+        </div>
+        <div class="section-index">
+          MODE <b>BELAJAR</b>
+        </div>
+      </div>
+
+      <div class="twocol">
+        <!-- FORM INPUT KALKULATOR -->
+        <article class="panel">
+          <div class="panel-heading">
+            <span class="step">04</span>
+            <div>
+              <h3>Masukkan fungsi</h3>
+              <p>Gunakan bentuk umum f(x) = ax + b dan g(x) = cx + d.</p>
+            </div>
+          </div>
+
+          <div class="keybox">
+            <div class="keyhead">
+              <span class="keybadge">f</span>
+              <div>
+                <b>Fungsi f(x)</b>
+                <small>f(x) = ax + b</small>
+              </div>
+            </div>
+            <div class="inputgrid">
+              <label>
+                Angka a
+                <input id="ca" type="number" value="2" step="any">
+              </label>
+              <label>
+                Angka b
+                <input id="cb" type="number" value="1" step="any">
+              </label>
+            </div>
+          </div>
+
+          <div class="keybox">
+            <div class="keyhead">
+              <span class="keybadge purple">g</span>
+              <div>
+                <b>Fungsi g(x)</b>
+                <small>g(x) = cx + d</small>
+              </div>
+            </div>
+            <div class="inputgrid">
+              <label>
+                Angka c
+                <input id="cc" type="number" value="1" step="any">
+              </label>
+              <label>
+                Angka d
+                <input id="cd" type="number" value="-3" step="any">
+              </label>
+            </div>
+          </div>
+
+          <button class="primary wide" id="calculate" type="button">
+            Hitung fungsi <b>→</b>
+          </button>
+
+          <div id="functionError" class="error" hidden></div>
+        </article>
+
+        <!-- HASIL KALKULATOR -->
+        <article class="panel">
+          <div class="panel-heading">
+            <span class="step">05</span>
+            <div>
+              <h3>Hasil perhitungan</h3>
+              <p>Klik salah satu kartu di bawah untuk melihat rincian langkahnya.</p>
+            </div>
+          </div>
+
+          <div class="result-grid">
+            <button class="resultcard" data-detail="fg" type="button">
+              <span>(f ∘ g)(x)</span>
+              <strong id="fg">2x − 5</strong>
+              <small>Lihat langkah ↗</small>
+            </button>
+            <button class="resultcard" data-detail="gf" type="button">
+              <span>(g ∘ f)(x)</span>
+              <strong id="gf">2x − 2</strong>
+              <small>Lihat langkah ↗</small>
+            </button>
+            <button class="resultcard" data-detail="finv" type="button">
+              <span>f⁻¹(x)</span>
+              <strong id="finv">(x − 1) / 2</strong>
+              <small>Lihat langkah ↗</small>
+            </button>
+            <button class="resultcard" data-detail="ginv" type="button">
+              <span>g⁻¹(x)</span>
+              <strong id="ginv">x + 3</strong>
+              <small>Lihat langkah ↗</small>
+            </button>
+            <button class="resultcard" data-detail="fginv" type="button">
+              <span>(f ∘ g)⁻¹(x)</span>
+              <strong id="fginv">(x + 5) / 2</strong>
+              <small>Lihat langkah ↗</small>
+            </button>
+            <button class="resultcard" data-detail="gfinv" type="button">
+              <span>(g ∘ f)⁻¹(x)</span>
+              <strong id="gfinv">(x + 2) / 2</strong>
+              <small>Lihat langkah ↗</small>
+            </button>
+          </div>
+
+          <div class="detail">
+            <div class="smallcap">LANGKAH PERHITUNGAN</div>
+            <h4 id="detailTitle">Pilih salah satu hasil fungsi</h4>
+            <p id="detailText">Langkah substitusi dan penyederhanaan aljabar akan muncul di sini.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SEKSI 03: RINGKASAN MATERI -->
+    <section id="guide" class="section protocol">
+      <div class="eyebrow">BAGIAN 03 — MATERI SINGKAT</div>
+      <h2>Matematika di balik simulasi</h2>
+
+      <div class="guide-grid">
+        <article>
+          <span class="guide-num">01</span>
+          <h3>1. Mengubah huruf menjadi angka</h3>
+          <p>Pesan dikonversi menjadi representasi numerik sebelum diproses. Huruf kapital A–Z bernilai 1–26, huruf kecil a–z bernilai −1 sampai −26, dan spasi bernilai 0.</p>
+          <div class="equation">A = 1, B = 2, …, Z = 26</div>
+          <div class="equation">a = −1, b = −2, …, z = −26</div>
+        </article>
+
+        <article>
+          <span class="guide-num">02</span>
+          <h3>2. Mengenkripsi dengan komposisi</h3>
+          <p>Fungsi g dikerjakan terlebih dahulu terhadap x, kemudian hasilnya dimasukkan ke dalam fungsi f.</p>
+          <div class="equation">E(x) = (f ∘ g)(x) = f(g(x))</div>
+          <div class="equation">E(x) = acx + ad + b</div>
+        </article>
+
+        <article>
+          <span class="guide-num">03</span>
+          <h3>3. Membuka pesan dengan invers</h3>
+          <p>Urutan operasi dibalik agar nilai awal dapat ditemukan kembali secara presisi.</p>
+          <div class="equation">(f ∘ g)⁻¹ = g⁻¹ ∘ f⁻¹</div>
+          <div class="equation">f⁻¹(x) = (x − b) / a</div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <a class="logo" href="index.html">
+      <span class="logoicon">S</span>
+      <span>
+        SecureBanking <em>Transmit</em>
+        <small>MATHFUNCTION LAB · PROYEK MATEMATIKA SEKOLAH</small>
+      </span>
+    </a>
+    <span>SIMULATOR ENKRIPSI FUNGSI · 100% STANDALONE TANPA DATABASE</span>
+  </footer>
+
+  <!-- ================= SKRIP JAVASCRIPT ================= -->
+  <script src="js/script.js"></script>
+  <script>
+    // Fallback bila js/script.js tidak termuat di lingkungan tertentu
+    if (typeof window.processCipher !== 'function' && !document.querySelector('script[src="script.js"]')) {
+      const fallbackScript = document.createElement('script');
+      fallbackScript.src = 'script.js';
+      document.body.appendChild(fallbackScript);
+    }
+  </script>
+</body>
+</html>

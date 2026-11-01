@@ -1,0 +1,40 @@
+SECUREBANKING TRANSMIT — VERSI BAHASA SEDERHANA
+
+GAMBARAN PROYEK
+Website ini adalah simulasi pelajaran matematika. Ceritanya, Perusahaan A ingin mengirim pesan ke Bank Mitra. Pesan diubah menjadi angka, dihitung memakai fungsi komposisi, lalu dikembalikan menggunakan fungsi invers.
+
+CARA MENJALANKAN
+1. Ekstrak file ZIP.
+2. Buka folder SecureBanking_MathFunctionLab di Visual Studio Code.
+3. Buka index.html dengan ekstensi Live Server atau browser.
+4. Di bagian “Ubah pesan menjadi angka rahasia”, masukkan pesan seperti TELKOM.
+5. Atur angka a, b, c, dan d. Pastikan a dan c tidak sama dengan 0.
+6. Klik tombol “Enkripsi pesan dengan (f ∘ g)(x)”. Website menampilkan konversi huruf menjadi angka, rumus komposisi, hasil enkripsi berupa angka, dan langkah deskripsi.
+7. Pada bagian kalkulator, atur fungsi dan klik “Hitung fungsi”. Klik kartu hasil untuk melihat perhitungan.
+
+ALUR MATEMATIKA
+1. Konversi pesan menjadi angka: A=1, B=2, ..., Z=26. Huruf kecil a=-1, b=-2, ..., z=-26. Spasi=0.
+2. Fungsi kunci: f(x)=ax+b dan g(x)=cx+d.
+3. Enkripsi: (f ∘ g)(x)=f(g(x))=a(cx+d)+b=acx+ad+b. Fungsi g dikerjakan lebih dahulu, lalu f.
+4. Invers: f⁻¹(x)=(x-b)/a dan g⁻¹(x)=(x-d)/c.
+5. Membuka pesan: (f ∘ g)⁻¹(x)=g⁻¹(f⁻¹(x)). Terapkan invers f dahulu, kemudian invers g.
+6. Ubah kembali angka ke huruf sesuai aturan konversi.
+
+CONTOH
+Dengan f(x)=2x+3 dan g(x)=4x+1:
+(f ∘ g)(x)=2(4x+1)+3=8x+5.
+Huruf T dikonversi menjadi 20, kemudian dienkripsi menjadi 8(20)+5=165.
+Untuk membukanya kembali: f⁻¹(165)=(165-3)/2=81, lalu g⁻¹(81)=(81-1)/4=20. Angka 20 dikembalikan menjadi T.
+
+CATATAN
+- Tidak ada operasi modulo; hasil enkripsi boleh lebih besar dari 26.
+- Agar bisa dibalik, a dan c tidak boleh 0.
+- Pesan yang didukung untuk konversi kembali hanya huruf dan spasi. Angka dan tanda baca belum didukung.
+- Ini simulasi belajar matematika, bukan sistem keamanan bank sungguhan. Jangan gunakan untuk melindungi data transaksi nyata.
+
+TIPOGRAFI
+Website menggunakan maksimal 3 keluarga font agar tampil profesional dan konsisten:
+- Manrope untuk judul, heading, dan identitas merek. Bobot tebal dipakai seperlunya untuk membangun hierarki visual.
+- Inter untuk isi paragraf, navigasi, label, dan tombol agar mudah dibaca.
+- IBM Plex Mono untuk rumus matematika, angka hasil, dan data enkripsi agar angka rata dan mudah dibandingkan.
+Font dimuat dari Google Fonts sehingga perlu internet; jika offline, browser memakai font pengganti.

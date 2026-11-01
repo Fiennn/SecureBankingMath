@@ -1,0 +1,17 @@
+{
+  "name": "securebanking-math-function-lab",
+  "version": "1.0.0",
+  "description": "Simulasi protokol enkripsi matematika berbasis fungsi komposisi dan invers",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "build": "echo Static site ready"
+  },
+  "keywords": [
+    "math",
+    "encryption",
+    "simulation"
+  ],
+  "author": "MathFunction Lab Team",
+  "license": "MIT"
+}
