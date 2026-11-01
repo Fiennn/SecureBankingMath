@@ -1,48 +1,55 @@
-# SecureBanking Transmit — MathFunction Lab
-> **Simulasi Protokol Enkripsi Matematika Berbasis Fungsi Komposisi & Invers (100% Standalone / Tanpa Database)**
+# SecureBanking Transmit — MathFunction Lab (Next.js Edition)
+> **Simulasi Protokol Enkripsi Matematika Berbasis Fungsi Komposisi & Invers (Built with Next.js App Router · 100% Standalone Tanpa Database)**
 
 Website interaktif ini memodelkan sistem pengiriman pesan rahasia antara **Perusahaan A** (pengirim) dan **Bank Mitra** (penerima).
-Semua perhitungan berjalan langsung di memori browser secara real-time **tanpa database sama sekali** (tidak membutuhkan SQL, IndexedDB, maupun koneksi internet/server luar).
+Dibangun menggunakan **Next.js (App Router)** dan siap dideploy langsung ke **Vercel** dengan 1 klik!
 
 ---
 
-## 🚀 Cara Menjalankan Website
+## ⚡ Fitur Utama
 
-### Cara 1: Sekali Klik (Windows)
-Klik dua kali file `start.bat`. Browser default otomatis membuka `http://localhost:3000`.
-
-### Cara 2: Langsung Buka di Browser (Tanpa Server)
-Cukup **klik dua kali** file `index.html` untuk langsung membukanya di browser favoritmu (Google Chrome, Microsoft Edge, Firefox, dll).
-
-### Cara 3: Terminal (Node.js)
-```bash
-npm start
-```
-*atau:*
-```bash
-node server.js
-```
-
-### Cara 4: VS Code Live Server
-Klik kanan `index.html` > pilih **Open with Live Server**.
+- **Framework Next.js**: Menggunakan App Router dan React Client Components yang reaktif dan modern.
+- **Support Vercel Penuh**: Dioptimalkan untuk deployment di Vercel tanpa konfigurasi rumit.
+- **100% Tanpa Database**: Seluruh kalkulasi matematika dihitung secara *real-time* langsung di memori browser (tidak memerlukan SQL, MongoDB, IndexedDB, maupun koneksi database apapun).
+- **Desain Modern & Responsif**: Tampilan antarmuka profesional yang nyaman dibuka di desktop, tablet, maupun ponsel.
 
 ---
 
-## 📁 Struktur Folder Proyek (Bersih & Terstruktur)
+## 🚀 Cara Menjalankan Secara Lokal
+
+1. **Jalankan Development Server**:
+   ```bash
+   npm run dev
+   ```
+2. Buka browser di [http://localhost:3000](http://localhost:3000).
+
+*(Di Windows, Anda juga bisa langsung klik dua kali file `start.bat`).*
+
+---
+
+## ☁️ Cara Deploy ke Vercel
+
+1. Buka [vercel.com](https://vercel.com) dan login dengan akun GitHub kamu.
+2. Klik tombol **"Add New..."** > pilih **"Project"**.
+3. Import repository **`SecureBankingMath`**.
+4. Vercel akan otomatis mengenali project ini sebagai **Next.js**.
+5. Klik **"Deploy"** dan website kamu akan langsung aktif!
+
+---
+
+## 📁 Struktur Folder Proyek
 
 ```text
 SecureBanking_MathFunctionLab/
-├── index.html            # Halaman utama website simulasi matematika
-├── server.js             # Local web server ringan (opsional)
-├── package.json          # Script npm
-├── start.bat             # Launcher 1-klik untuk Windows
-├── README.md             # Dokumentasi lengkap proyek
-│
-├── css/
-│   └── style.css         # Desain tampilan modern & responsif
-│
-└── js/
-    └── script.js         # Logika matematika (enkripsi, dekripsi, kalkulator)
+├── app/
+│   ├── layout.js         # Root layout & metadata Next.js
+│   ├── page.js           # Komponen utama simulasi matematika & kalkulator
+│   └── globals.css       # Stylesheet global Next.js
+├── next.config.js        # Konfigurasi Next.js
+├── package.json          # Dependencies Next.js & React
+├── package-lock.json     # Lockfile npm
+├── start.bat             # Launcher 1-klik untuk local dev
+└── README.md             # Dokumentasi proyek
 ```
 
 ---
@@ -54,10 +61,10 @@ SecureBanking_MathFunctionLab/
    - Huruf kapital `A`–`Z` = `1` sampai `26`
    - Huruf kecil `a`–`z` = `-1` sampai `-26`
 
-2. **Kunci Fungsi**:
+2. **Kunci Fungsi Linear**:
    - $f(x) = ax + b$
    - $g(x) = cx + d$
-   *(Syarat: $a \neq 0$ dan $c \neq 0$ agar dapat dibalik/invers).*
+   *(Syarat: $a \neq 0$ dan $c \neq 0$ agar fungsi memiliki invers).*
 
 3. **Enkripsi (Fungsi Komposisi)**:
    $$(f \circ g)(x) = f(g(x)) = a(cx + d) + b = acx + (ad + b)$$
@@ -66,12 +73,3 @@ SecureBanking_MathFunctionLab/
    $$(f \circ g)^{-1}(x) = g^{-1}(f^{-1}(x))$$
    - $f^{-1}(x) = \frac{x - b}{a}$
    - $g^{-1}(x) = \frac{x - d}{c}$
-
----
-
-## 💡 Fitur Utama
-
-- **Ruang Pengiriman**: Mengubah teks menjadi kode angka, mengenkripsi dengan komposisi $(f \circ g)(x)$, dan membuktikan proses dekripsi langkah demi langkah.
-- **Kalkulator Fungsi Komposisi & Invers**: Menghitung $(f \circ g)$, $(g \circ f)$, $f^{-1}$, $g^{-1}$, $(f \circ g)^{-1}$, dan $(g \circ f)^{-1}$ lengkap dengan penjabaran aljabar.
-- **Salin Otomatis**: Tombol salin hasil enkripsi dengan satu klik.
-- **100% Client-side**: Ringan, cepat, aman, dan tanpa ketergantungan database apapun.
