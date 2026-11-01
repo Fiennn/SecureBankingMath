@@ -231,7 +231,7 @@
     }
   }
 
-  // Database rincian penjelasan langkah matematis
+  // Kamus objek rincian penjelasan langkah matematis
   const detailExplanations = {
     fg: (a, b, c, d) => [
       'Komposisi (f ∘ g)(x)',
